@@ -3,7 +3,8 @@ import math
 import cs50
 #the database is taken from IMDB
 
-db = sqlite3.SQLITE_READ("sqlite:///shows.db")
+db = cs50.SQL("sqlite:///Lecture7/src7/imdb/shows.db")
+
 
 def main():
     request = input('What whould like to search for(Movie or person: ')
@@ -17,6 +18,5 @@ def main():
         rows = db.execute("SELECT * FROM people WHERE name LIKE ?", person_request)
         for row in rows:
             print(row)
-            
-
+main()
 
